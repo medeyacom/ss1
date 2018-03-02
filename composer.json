@@ -1,0 +1,21 @@
+{
+    "name": "medeyacom/ss1",
+    "description": "site with blog",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Natalya Gorneeva",
+            "email": "medeyacom@mail.ru"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "medeyacom\\ss1\\": ""
+        }
+    }
+}

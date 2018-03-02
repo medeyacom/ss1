@@ -1,8 +1,5 @@
 # ss1
-Site with blog
-====================
 site with blog
-
 Installation
 ------------
 

@@ -1,0 +1,38 @@
+#Options +FollowSymLinks
+#IndexIgnore */*
+RewriteEngine on
+
+# hide files and folders
+RedirectMatch 404 /\.git
+RedirectMatch 404 /composer\.
+RedirectMatch 404 /.bowerrc
+
+# If a directory or a file exists, use the request directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# Otherwise forward the request to index.php
+RewriteRule . index.php
+ 
+# Если запрос начинается с /admin, то /backend/web/
+#RewriteCond %{REQUEST_URI} ^/admin
+#RewriteRule ^admin\/?(.*) /backend/web/$1
+ 
+# Добавляем другой запрос /frontend/web/$1
+#RewriteCond %{REQUEST_URI} !^/(frontend/web|backend/
+#web|admin)
+#RewriteRule (.*) /frontend/web/$1
+ 
+ # Если frontend запрос
+#RewriteCond %{REQUEST_URI} ^/frontend/web
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule . /frontend/web/index.php
+
+# Если backend запрос
+#RewriteCond %{REQUEST_URI} ^/backend/web
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule . /backend/web/index.php
+
+#RewriteRule . index.php
